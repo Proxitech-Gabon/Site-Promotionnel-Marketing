@@ -3,27 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Proxitech Gabon | Marketplace Officielle</title>
+    <title>Proxitech Gabon | Boutique Officielle</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
 
+    <a href="https://wa.me/24107000000" class="whatsapp-float" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+        <span class="float-text">Besoin d'aide ?</span>
+    </a>
+
     <header>
         <div class="logo" onclick="showSection('home')">Proxitech <span>Gabon</span></div>
-        
         <div class="search-bar">
-            <input type="text" id="searchInput" placeholder="Rechercher un produit..." onkeyup="handleSearch()">
+            <input type="text" id="searchInput" placeholder="Chercher un modèle..." onkeyup="handleSearch()">
             <i class="fas fa-search"></i>
         </div>
-
         <div class="header-icons">
             <div class="icon-item" onclick="showSection('account')">
                 <i class="fas fa-user"></i>
-                <span>Compte</span>
+                <span>Profil</span>
             </div>
             <div class="icon-item" onclick="openCart()">
-                <i class="fas fa-shopping-basket"></i>
+                <i class="fas fa-shopping-bag"></i>
                 <span id="cart-count">0</span>
             </div>
         </div>
@@ -49,41 +52,62 @@
 
         <section id="account-section" class="hidden">
             <div class="account-card">
-                <i class="fas fa-user-shield" style="font-size: 3rem; color: var(--blue);"></i>
-                <h2>Mon Espace Proxitech</h2>
-                <p>Gérez vos commandes et vos favoris en toute sécurité.</p>
-                <div class="badge" style="background: #e1f5fe; color: #01579b; padding: 10px; border-radius: 10px; margin: 20px 0;">Client Privilège</div>
-                <button onclick="showSection('home')" style="background: var(--blue); color: white; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer;">Retour au catalogue</button>
+                <i class="fas fa-user-circle" style="font-size: 3rem; color: var(--blue);"></i>
+                <h2>Espace Client</h2>
+                <p>Bienvenue chez Proxitech Gabon.</p>
+                <div id="order-history" class="empty-state">Aucune commande récente.</div>
+                <button class="btn-std" onclick="showSection('home')">Retour à la boutique</button>
             </div>
         </section>
     </main>
 
     <section class="contact-section">
         <div class="contact-container">
-            <div class="contact-info">
-                <h3>Contactez Proxitech</h3>
-                <p><i class="fas fa-map-marker-alt"></i> Libreville, Gabon (Zone Oloumi)</p>
-                <p><i class="fas fa-phone-alt"></i> +241 07 00 00 00</p>
-                <p><i class="fas fa-envelope"></i> contact@proxitech-gabon.ga</p>
-                
-                <div class="socials">
-                    <a href="#" id="link-facebook" target="_blank" title="Facebook Proxitech"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#" id="link-instagram" target="_blank" title="Instagram Proxitech"><i class="fab fa-instagram"></i></a>
-                    <a href="#" id="link-whatsapp-direct" target="_blank" title="WhatsApp Proxitech"><i class="fab fa-whatsapp"></i></a>
+            <div class="contact-card-premium">
+                <div class="card-header-blue">
+                    <h3><i class="fas fa-headset"></i> Service Client</h3>
+                    <p>Une question ? Nous sommes là pour vous.</p>
+                </div>
+                <div class="card-body-info">
+                    <div class="info-row">
+                        <div class="icon-circle"><i class="fas fa-map-marker-alt"></i></div>
+                        <div class="text-group">
+                            <b>Localisation</b>
+                            <span>Libreville, Zone Oloumi, Gabon</span>
+                        </div>
+                    </div>
+                    <div class="info-row">
+                        <div class="icon-circle"><i class="fas fa-phone-alt"></i></div>
+                        <div class="text-group">
+                            <b>Téléphone</b>
+                            <span>+241 07 00 00 00</span>
+                        </div>
+                    </div>
+                    <div class="info-row">
+                        <div class="icon-circle"><i class="fas fa-envelope"></i></div>
+                        <div class="text-group">
+                            <b>Email</b>
+                            <span>contact@proxitech-gabon.ga</span>
+                        </div>
+                    </div>
+                    <div class="social-grid-flex">
+                        <a href="#" id="link-facebook" target="_blank" class="social-icon fb"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" id="link-instagram" target="_blank" class="social-icon ig"><i class="fab fa-instagram"></i></a>
+                    </div>
                 </div>
             </div>
-            <div class="map-box">
-                <div class="fake-map">
-                    <i class="fas fa-map-marked-alt" style="font-size: 2rem; margin-bottom: 10px;"></i><br>
-                    Carte Interactive Proxitech Gabon<br>
-                    <span style="font-size: 0.8rem; font-weight: normal;">(Cliquez pour agrandir)</span>
+            <div class="map-premium">
+                <div class="fake-map-overlay">
+                    <i class="fas fa-map-marked-alt"></i>
+                    <span>Carte Interactive</span>
+                    <small>Retrouvez-nous à Oloumi</small>
                 </div>
             </div>
         </div>
     </section>
 
     <footer>
-        <p>&copy; 2026 Proxitech Gabon | Expertise Numérique au Gabon</p>
+        <p>&copy; 2026 Proxitech Gabon | Leader de la Tech à Libreville</p>
     </footer>
 
     <div id="modal-detail" class="modal">
@@ -96,19 +120,44 @@
     <div id="modal-cart" class="modal">
         <div class="modal-content">
             <span class="close" onclick="closeModal('modal-cart')">&times;</span>
-            <h2>Votre Panier</h2>
-            <div id="cart-items-display"></div>
-            <div class="total-row" style="font-weight: bold; font-size: 1.2rem; border-top: 2px solid #eee; padding-top: 10px; margin-top: 10px;">
-                Total : <span id="cart-total">0</span> FCFA
+            <h2 class="modal-title">Ma Commande</h2>
+            
+            <div id="cart-items-display" class="cart-list-fixed">
+                </div>
+
+            <div class="cart-summary-box">
+                <div class="summary-line">
+                    <span>Total à payer</span>
+                    <span id="cart-total" class="price-bold">0</span> <span class="price-bold">FCFA</span>
+                </div>
             </div>
             
-            <div class="pay-methods" style="margin-top: 20px; background: #f9f9f9; padding: 15px; border-radius: 10px;">
-                <p style="margin-bottom: 10px; font-weight: bold;">Mode de transfert :</p>
-                <label style="display: block; margin-bottom: 5px;"><input type="radio" name="pay" value="Airtel Money" checked> Airtel Money</label>
-                <label style="display: block;"><input type="radio" name="pay" value="Moov Money (Mobicash)"> Mobicash (Moov)</label>
+            <div class="checkout-form">
+                <h3>Finalisation de la commande</h3>
+                <div class="input-group">
+                    <i class="fas fa-user"></i>
+                    <input type="text" id="client-name" placeholder="Votre nom complet" required>
+                </div>
+                <div class="input-group">
+                    <i class="fas fa-map-pin"></i>
+                    <input type="text" id="client-location" placeholder="Quartier (ex: Akanda, PK12...)" required>
+                </div>
+                
+                <p class="label-title">Mode de paiement préféré :</p>
+                <div class="pay-options-grid">
+                    <label class="pay-btn">
+                        <input type="radio" name="pay" value="Airtel Money" checked>
+                        <span>Airtel Money</span>
+                    </label>
+                    <label class="pay-btn">
+                        <input type="radio" name="pay" value="Moov Money">
+                        <span>Mobicash</span>
+                    </label>
+                </div>
             </div>
+
             <button class="btn-wa-final" onclick="sendToWhatsApp()">
-                <i class="fab fa-whatsapp"></i> Finaliser sur WhatsApp
+                <i class="fab fa-whatsapp"></i> Commander via WhatsApp
             </button>
         </div>
     </div>
