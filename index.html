@@ -66,7 +66,7 @@
             <div class="contact-card-premium">
                 <div class="card-header-blue">
                     <h3><i class="fas fa-headset"></i> Service Client</h3>
-                    <p>Une question ? Nous sommes là pour vous.</p>
+                    <p>Expertise et proximité à Libreville.</p>
                 </div>
                 <div class="card-body-info">
                     <div class="info-row">
@@ -83,31 +83,24 @@
                             <span>+241 07 00 00 00</span>
                         </div>
                     </div>
-                    <div class="info-row">
-                        <div class="icon-circle"><i class="fas fa-envelope"></i></div>
-                        <div class="text-group">
-                            <b>Email</b>
-                            <span>contact@proxitech-gabon.ga</span>
-                        </div>
-                    </div>
                     <div class="social-grid-flex">
                         <a href="#" id="link-facebook" target="_blank" class="social-icon fb"><i class="fab fa-facebook-f"></i></a>
                         <a href="#" id="link-instagram" target="_blank" class="social-icon ig"><i class="fab fa-instagram"></i></a>
                     </div>
                 </div>
             </div>
+            
             <div class="map-premium">
-                <div class="fake-map-overlay">
-                    <i class="fas fa-map-marked-alt"></i>
-                    <span>Carte Interactive</span>
-                    <small>Retrouvez-nous à Oloumi</small>
-                </div>
+                <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3989.748681284566!2d9.4600!3d0.3900!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1a6697a502c239e7%3A0x8cfdde86be342464!2sOloumi%2C%20Libreville!5e0!3m2!1sfr!2sga!4v1710000000000!5m2!1sfr!2sga" 
+                    width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy">
+                </iframe>
             </div>
         </div>
     </section>
 
     <footer>
-        <p>&copy; 2026 Proxitech Gabon | Leader de la Tech à Libreville</p>
+        <p>&copy; 2026 Proxitech Gabon | Votre partenaire numérique</p>
     </footer>
 
     <div id="modal-detail" class="modal">
@@ -122,28 +115,27 @@
             <span class="close" onclick="closeModal('modal-cart')">&times;</span>
             <h2 class="modal-title">Ma Commande</h2>
             
-            <div id="cart-items-display" class="cart-list-fixed">
-                </div>
+            <div id="cart-items-display" class="cart-list-fixed"></div>
 
             <div class="cart-summary-box">
                 <div class="summary-line">
-                    <span>Total à payer</span>
-                    <span id="cart-total" class="price-bold">0</span> <span class="price-bold">FCFA</span>
+                    <span>Total estimé</span>
+                    <span class="price-bold"><span id="cart-total">0</span> FCFA</span>
                 </div>
             </div>
             
             <div class="checkout-form">
-                <h3>Finalisation de la commande</h3>
+                <h3>Infos Livraison</h3>
                 <div class="input-group">
                     <i class="fas fa-user"></i>
                     <input type="text" id="client-name" placeholder="Votre nom complet" required>
                 </div>
                 <div class="input-group">
                     <i class="fas fa-map-pin"></i>
-                    <input type="text" id="client-location" placeholder="Quartier (ex: Akanda, PK12...)" required>
+                    <input type="text" id="client-location" placeholder="Quartier (ex: Angondjé, PK8...)" required>
                 </div>
                 
-                <p class="label-title">Mode de paiement préféré :</p>
+                <p class="label-title">Mode de règlement :</p>
                 <div class="pay-options-grid">
                     <label class="pay-btn">
                         <input type="radio" name="pay" value="Airtel Money" checked>
@@ -157,7 +149,7 @@
             </div>
 
             <button class="btn-wa-final" onclick="sendToWhatsApp()">
-                <i class="fab fa-whatsapp"></i> Commander via WhatsApp
+                <i class="fab fa-whatsapp"></i> Valider sur WhatsApp
             </button>
         </div>
     </div>
